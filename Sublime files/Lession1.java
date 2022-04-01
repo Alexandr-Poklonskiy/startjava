@@ -1,4 +1,4 @@
-public class MyFirstApp {   
+public class Lession1 {   
     public static void main(String[] args) {
         
         System.out.println("Bingo!!!");
