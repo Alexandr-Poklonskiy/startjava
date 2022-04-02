@@ -171,12 +171,5 @@ public class VariablesTheme {
         int minutes = (nSec - hours * 3600) / 60;
         int seconds = nSec - (hours * 3600) - (minutes * 60);
         System.out.println("Время в формате ЧЧ:ММ:СС " + hours + ":" + minutes + ":" + seconds);
-
-
-
-
-
-
-
     }    
 }
