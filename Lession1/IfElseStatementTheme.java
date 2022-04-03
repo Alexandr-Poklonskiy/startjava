@@ -171,5 +171,54 @@ public class IfElseStatementTheme {
             System.out.println("Бублик с дыркой.");
         }
 
+        // 9. Определение существования треугольника
+        System.out.println("\n9. Определение существования треугольника");
+        /*В условии нужно проверить существование прямоугольного треугольника.
+        В таком треугольнике квадрат гипотенузы равен сумме квадратов катетов.
+        Следовательно нужно найти большую сторону и проверить это равентсво.*/
+        int a = 3;
+        int b = 4;
+        int c = 5;
+        int gip = 0;
+        int cat1 = 0;
+        int cat2 = 0;
+        int area;
+        if(a > b) {
+            if(a > c) {
+                gip = a;
+                cat1 = b;
+                cat2 = c;
+            }
+        }else if(b > c) {
+            gip = b;
+            cat1 = a;
+            cat2 = c;
+        }else{
+            gip = c;
+            cat1 = a;
+            cat2 = b;
+        }
+
+        if(gip * gip == cat1 * cat1 + cat2 * cat2){
+            area = cat1 * cat2 / 2;
+            System.out.println("Это прямоугольный треугольник.\nГипотенуза " + gip + "\nКатеты " + cat1 + " " + cat2 + "\nПлощадь треугольника равна " + area);
+            System.out.println("|\\");
+            System.out.println("| \\");
+            System.out.println("|  \\");
+            System.out.println("|___\\");
+
+        }else{
+            System.out.println("Прямоугольного треугольника с такими сторанами не существует.");
+        }
+
+
+        // 10. Подсчет количества банкнот
+        System.out.println("\n10. Подсчет количества банкнот");
+        int sum = 567;
+        int numBank50 = sum / 50;
+        int numBank10 = sum % 50 / 10;
+        int numBank1 = sum % 10;
+        int revSum = numBank50 * 50 + numBank10 * 10 + numBank1;
+        System.out.println("Для получения суммы " + revSum + " понадобиться:" + "\nбанкнот номиналом 50: " + numBank50 + "\nбанкнот номиналом 10: " + numBank10 + "\nбонкнот номиналом 1: " + numBank1);
     }
 }
