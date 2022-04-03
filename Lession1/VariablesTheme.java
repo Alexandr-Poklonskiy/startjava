@@ -58,36 +58,20 @@ public class VariablesTheme {
         System.out.println("double " + doubleMax);
 
         System.out.println("Инкремент");
-
-        byteMax++;
-        shortMax++;
-        intMax++;
-        longMax++;
-        floatMax++; // Не понимаю почему переменные с плавающей точкой
-        doubleMax++;        // не поменяли значения ;(
-
-        System.out.println(byteMax);
-        System.out.println(shortMax);
-        System.out.println(intMax);
-        System.out.println(longMax);
-        System.out.println(floatMax);
-        System.out.println(doubleMax);
+        System.out.println(++byteMax);
+        System.out.println(++shortMax);
+        System.out.println(++intMax);
+        System.out.println(++longMax);
+        System.out.println(++floatMax);
+        System.out.println(++doubleMax);
 
         System.out.println("Декремент");
-
-        byteMax--;
-        shortMax--;
-        intMax--;
-        longMax--;
-        floatMax--;
-        doubleMax--;
-
-        System.out.println(byteMax);
-        System.out.println(shortMax);
-        System.out.println(intMax);
-        System.out.println(longMax);
-        System.out.println(floatMax);
-        System.out.println(doubleMax);
+        System.out.println(--byteMax);
+        System.out.println(--shortMax);
+        System.out.println(--intMax);
+        System.out.println(--longMax);
+        System.out.println(--floatMax);
+        System.out.println(--doubleMax);
 
 
         // 5. Перестановка значений переменных
@@ -142,10 +126,10 @@ public class VariablesTheme {
 
         // 9. Отображение количества сотен, десятков и единиц числа
         System.out.println("\n9. Отображение количества сотен, десятков и единиц числа ");
-        int srcNum2 = 123;
-        int hundreds = srcNum2 / 100;
-        int tens = srcNum2 / 10 % 10;
-        int units = srcNum2 % 10;
+        srcNum = 123;
+        int hundreds = srcNum / 100;
+        int tens = srcNum / 10 % 10;
+        int units = srcNum % 10;
         System.out.println("Сотни: " + hundreds);
         System.out.println("Десятки: " + tens);
         System.out.println("Еденицы: " + units);
@@ -156,7 +140,7 @@ public class VariablesTheme {
         int srcSec = 86399;
         int hours = srcSec / 3600;
         int minutes = srcSec % 3600 / 60;
-        int seconds = srcSec % 3600 / 60 % 60;
+        int seconds = srcSec % 60;
         System.out.println("Время в формате ЧЧ:ММ:СС " + hours + ":" + minutes + ":" + seconds);
     }    
 }
