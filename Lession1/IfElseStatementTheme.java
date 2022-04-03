@@ -179,10 +179,10 @@ public class IfElseStatementTheme {
         int a = 3;
         int b = 4;
         int c = 5;
+        // не понимаю, почему если не проинициализировать эти переменные, при компиляции возникает ошибка
         int gip = 0;
         int cat1 = 0;
         int cat2 = 0;
-        int area;
         if(a > b) {
             if(a > c) {
                 gip = a;
@@ -199,9 +199,8 @@ public class IfElseStatementTheme {
             cat2 = b;
         }
 
-        if(gip * gip == cat1 * cat1 + cat2 * cat2){
-            area = cat1 * cat2 / 2;
-            System.out.println("Это прямоугольный треугольник.\nГипотенуза " + gip + "\nКатеты " + cat1 + " " + cat2 + "\nПлощадь треугольника равна " + area);
+        if(gip * gip == cat1 * cat1 + cat2 * cat2) {
+            System.out.println("Это прямоугольный треугольник.\nГипотенуза " + gip + "\nКатеты " + cat1 + " " + cat2 + "\nПлощадь треугольника равна " + (cat1 * cat2 / 2));
             System.out.println("|\\");
             System.out.println("| \\");
             System.out.println("|  \\");
