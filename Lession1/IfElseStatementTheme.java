@@ -151,11 +151,9 @@ public class IfElseStatementTheme {
             pointsProgramming = 2;
         }
 
-        int averScore = (percScoreHistory + rercScoreProgramming) / 2;
-        int averPoints = (pointsHistory + pointsProgramming) / 2;
         System.out.println("История: " + pointsHistory + " Программирование: " + pointsProgramming);
-        System.out.println("Средний балл оценок по предметам " + averPoints);
-        System.out.println("Средний % по предметам " + averScore);
+        System.out.println("Средний балл оценок по предметам " + ((pointsHistory + pointsProgramming) / 2));
+        System.out.println("Средний % по предметам " + ((percScoreHistory + rercScoreProgramming) / 2));
 
         // 8. Расчет прибыли (убытка)
         System.out.println("\n8. Расчет прибыли (убытка)");
