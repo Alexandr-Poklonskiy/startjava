@@ -86,23 +86,13 @@ public class IfElseStatementTheme {
         // 5. Определение буквы, числа или символа по их коду
         // Кажется я тут наворотил какую-то дичь, но вроде работает...
         System.out.println("\n5. Определение буквы, числа или символа по их коду");
-        char unknown = '\u005A';
-        if(unknown < '\u0030') {
-            System.out.println("Это символ " + unknown);
-        } else if(unknown < '\u003A') {
-            System.out.println("Это цифра " + unknown);
-        } else if( unknown < '\u0041') {
-            System.out.println("Это буква " + unknown);
-        } else if(unknown < '\u0041') {
-            System.out.println("Это символ " + unknown);
-        } else if(unknown < '\u005B') {
-            System.out.println("Это буква " + unknown);
-        } else if(unknown < '\u0061') {
-            System.out.println("Это символ " + unknown);
-        } else if(unknown < '\u007B') {
-            System.out.println("Это буква " + unknown);
-        } else if(unknown <= '\u007F') {
-            System.out.println("Это символ " + unknown);
+        char unknownChar = '\u0056';
+        if((unknownChar < '\u0030') || ((unknownChar > '\u0039') && (unknownChar < '\u0041')) || ((unknownChar > '\u005A') && (unknownChar < '\u0061')) || (unknownChar > '\u007A')) {
+            System.out.println("Это символ " + unknownChar);
+        } else if((unknownChar > '\u002F') && (unknownChar < '\u003A')) {
+            System.out.println("Это цифра " + unknownChar);
+        } else if((unknownChar > '\u0040') && (unknownChar < '\u005B') || ((unknownChar > '\u0060') && (unknownChar < '\u007B'))) {
+            System.out.println("Это буква " + unknownChar);
         } else {
             System.out.println("Вы сломали пространственно-временной континуум.");
         }
@@ -111,17 +101,14 @@ public class IfElseStatementTheme {
         System.out.println("\n6. Определение суммы вклада и начисленных банком %");
         double deposit = 300000;
         double rate;
-        double profit;
         if(deposit < 100000) {
             rate = 5;
-            profit = deposit * 0.05;
         } else if(deposit < 300000) {
             rate = 7;
-            profit = deposit * 0.07;
         } else {
             rate = 10;
-            profit = deposit * 0.1;
         }
+        double profit = rate / 100 * deposit;
         System.out.println("Сумма вклада: " + deposit + ". Начисленно " + rate + "%. Итоговая сумма: " + (deposit + profit));
 
         // 7. Определение оценки по предметам
