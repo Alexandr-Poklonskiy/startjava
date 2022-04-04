@@ -9,7 +9,7 @@ public class IfElseStatementTheme {
         char firstLetterOfName = name.charAt(0);
         if(age > 20) {
             System.out.println("Старость - не радость.");
-        }else{
+        } else {
             System.out.println("Молодо - зелено.");
         }
 
@@ -17,17 +17,17 @@ public class IfElseStatementTheme {
             System.out.println("С 8 марта!!!");
         }
 
-        if(height < 1.80){
+        if(height < 1.80) {
             System.out.println("Рост меньше 1.80 м.");
-        }else{
+        } else {
             System.out.println("Рост больше или равен 1.80 м.");
         }
 
         if(firstLetterOfName == 'M') {
             System.out.println("Первая буква вашего имени 'M'");
-        }else if(firstLetterOfName == 'I') {
+        } else if(firstLetterOfName == 'I') {
             System.out.println("Первая буква вашего имени 'I'");
-        }else{
+        } else {
             System.out.println("Первая буква вашего имени не 'M' и не 'I'");
         }
 
@@ -37,7 +37,7 @@ public class IfElseStatementTheme {
         int y = 5;
         if(x > y) {
             System.out.println(x + " максимальное число, " + y + " минимальное.");
-        }else{
+        } else {
             System.out.println(y + " максимальное число, " + x + " минимальное.");
         }
 
@@ -46,15 +46,15 @@ public class IfElseStatementTheme {
         int number = 15;
         if(number % 2 == 0) {
             System.out.println("Число чётное.");
-        }else{
+        } else {
             System.out.println("Число нечётное");
         }
 
         if(number > 0) {
             System.out.println("Число положительное.");
-        }else if(number < 0) {
+        } else if(number < 0) {
             System.out.println("Число отрицательное.");
-        }else{
+        } else {
             System.out.println("Это ноль");
         }
 
@@ -68,7 +68,7 @@ public class IfElseStatementTheme {
         int thirdN2 = srcNum2 % 10;
         int secondN2 = srcNum2 / 10 % 10;
         int firstN2 = srcNum2 / 100;
-        if((firstN1 == firstN2) || (secondN1 ==secondN2) || (thirdN1 == thirdN2)) {
+        if((firstN1 == firstN2) || (secondN1 == secondN2) || (thirdN1 == thirdN2)) {
             System.out.println("Числа совпадают: ");
             if(firstN1 == firstN2) {
                 System.out.println("В первом разраде: " + firstN1);
@@ -79,7 +79,7 @@ public class IfElseStatementTheme {
             if(thirdN1 == thirdN2) {
                 System.out.println("В третьем разраде: " + thirdN1);
             }
-        }else{
+        } else {
             System.out.println("Числа не совподают.");
         }
 
@@ -89,21 +89,21 @@ public class IfElseStatementTheme {
         char unknown = '\u005A';
         if(unknown < '\u0030') {
             System.out.println("Это символ " + unknown);
-        }else if(unknown < '\u003A') {
+        } else if(unknown < '\u003A') {
             System.out.println("Это цифра " + unknown);
-        }else if( unknown < '\u0041') {
+        } else if( unknown < '\u0041') {
             System.out.println("Это буква " + unknown);
-        }else if(unknown < '\u0041') {
+        } else if(unknown < '\u0041') {
             System.out.println("Это символ " + unknown);
-        }else if(unknown < '\u005B') {
+        } else if(unknown < '\u005B') {
             System.out.println("Это буква " + unknown);
-        }else if(unknown < '\u0061') {
+        } else if(unknown < '\u0061') {
             System.out.println("Это символ " + unknown);
-        }else if(unknown < '\u007B') {
+        } else if(unknown < '\u007B') {
             System.out.println("Это буква " + unknown);
-        }else if(unknown <= '\u007F') {
+        } else if(unknown <= '\u007F') {
             System.out.println("Это символ " + unknown);
-        }else{
+        } else {
             System.out.println("Вы сломали пространственно-временной континуум.");
         }
 
@@ -115,10 +115,10 @@ public class IfElseStatementTheme {
         if(deposit < 100000) {
             rate = 5;
             profit = deposit * 0.05;
-        }else if(deposit < 300000) {
+        } else if(deposit < 300000) {
             rate = 7;
             profit = deposit * 0.07;
-        }else{
+        } else {
             rate = 10;
             profit = deposit * 0.1;
         }
@@ -133,21 +133,21 @@ public class IfElseStatementTheme {
 
         if(percScoreHistory > 91) {
             pointsHistory = 5;
-        }else if(percScoreHistory > 73){
+        } else if(percScoreHistory > 73) {
             pointsHistory = 4;
-        }else if(percScoreHistory >60){
+        } else if(percScoreHistory >60) {
             pointsHistory = 3;
-        }else{
+        } else {
             pointsHistory = 2;
         }
 
         if(rercScoreProgramming > 91) {
             pointsProgramming = 5;
-        }else if(rercScoreProgramming > 73){
+        } else if(rercScoreProgramming > 73) {
             pointsProgramming = 4;
-        }else if(rercScoreProgramming >60){
+        } else if(rercScoreProgramming >60) {
             pointsProgramming = 3;
-        }else{
+        } else {
             pointsProgramming = 2;
         }
 
@@ -163,9 +163,9 @@ public class IfElseStatementTheme {
         int estimatedIncome = (averRevenue - rent - costPrice) * 12;
         if(estimatedIncome > 0) {
             System.out.println("Предполагаемая прибыль за год: +" + estimatedIncome);
-        }else if(estimatedIncome < 0) {
+        } else if(estimatedIncome < 0) {
             System.out.println("Предполагаемый убыток за год: " + estimatedIncome);
-        }else{
+        } else {
             System.out.println("Бублик с дыркой.");
         }
 
@@ -187,11 +187,11 @@ public class IfElseStatementTheme {
                 cat1 = b;
                 cat2 = c;
             }
-        }else if(b > c) {
+        } else if(b > c) {
             gip = b;
             cat1 = a;
             cat2 = c;
-        }else{
+        } else {
             gip = c;
             cat1 = a;
             cat2 = b;
@@ -204,7 +204,7 @@ public class IfElseStatementTheme {
             System.out.println("|  \\");
             System.out.println("|___\\");
 
-        }else{
+        } else {
             System.out.println("Прямоугольного треугольника с такими сторанами не существует.");
         }
 
