@@ -87,14 +87,12 @@ public class IfElseStatementTheme {
         // Кажется я тут наворотил какую-то дичь, но вроде работает...
         System.out.println("\n5. Определение буквы, числа или символа по их коду");
         char unknownChar = '\u0056';
-        if((unknownChar < '\u0030') || ((unknownChar > '\u0039') && (unknownChar < '\u0041')) || ((unknownChar > '\u005A') && (unknownChar < '\u0061')) || (unknownChar > '\u007A')) {
-            System.out.println("Это символ " + unknownChar);
-        } else if((unknownChar > '\u002F') && (unknownChar < '\u003A')) {
+        if((unknownChar > '\u002F') && (unknownChar < '\u003A')) {
             System.out.println("Это цифра " + unknownChar);
         } else if((unknownChar > '\u0040') && (unknownChar < '\u005B') || ((unknownChar > '\u0060') && (unknownChar < '\u007B'))) {
             System.out.println("Это буква " + unknownChar);
         } else {
-            System.out.println("Вы сломали пространственно-временной континуум.");
+            System.out.println("Это символ " + unknownChar);
         }
 
         // 6. Определение суммы вклада и начисленных банком %
