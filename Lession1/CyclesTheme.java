@@ -138,13 +138,13 @@ public class CyclesTheme {
             j = 1;
         } while(i >= 0);
 
-        /*// 7. Отображение ASCII-символов.
+        // 7. Отображение ASCII-символов.
         System.out.println("\n7. Отображение ASCII-символов.");
         System.out.println("Dec Char");
         for(i = 0; i < 127; i++) {
             char simbol = (char)i;
-            System.out.println(i + "   " + simbol);
-        }*/
+            System.out.println(new DecimalFormat("000").format(i) + " " + simbol);
+        }
 
         // 8. Проверка, является ли число палиндромом.
         System.out.println("\n8. Проверка, является ли число палиндромом.");
