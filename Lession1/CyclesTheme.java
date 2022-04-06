@@ -143,7 +143,7 @@ public class CyclesTheme {
         System.out.println("Dec Char");
         for(i = 0; i < 127; i++) {
             char simbol = (char)i;
-            System.out.println(new DecimalFormat("000").format(i) + " " + simbol);
+            System.out.println(new DecimalFormat("000").format(i) + "  " + simbol);
         }
 
         // 8. Проверка, является ли число палиндромом.
