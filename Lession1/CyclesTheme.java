@@ -142,7 +142,7 @@ public class CyclesTheme {
         System.out.println("\n7. Отображение ASCII-символов.");
         System.out.println("Dec Char");
         for(i = 0; i <= 127; i++) {
-            char simbol = (char)i;
+            char simbol = (char) i;
             System.out.println(new DecimalFormat("000").format(i) + "  " + simbol);
         }
 
