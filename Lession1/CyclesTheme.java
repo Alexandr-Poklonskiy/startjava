@@ -32,9 +32,9 @@ public class CyclesTheme {
         } else if(num2 > num3) {
             maxN = num2;
                 if(num1 > num3) {
-                minN = num3;
+                    minN = num3;
                 } else {
-                minN = num1;
+                    minN = num1;
                 }
         } else {
             maxN = num3;
@@ -59,22 +59,21 @@ public class CyclesTheme {
 
         // 4. Вывод чисел на консоль в несколько строк
         System.out.println("\n4. Вывод чисел на консоль в несколько строк.");
-        int count = 1;
-        for(int i = 1; i < 30; i += 2) {
-            if(count % 5 != 0) {
-                if(i < 24) {
-                    System.out.printf("%3d", i);
-                } else {
-                    System.out.printf("%3d", 0);
-                }
-            } else {
-                if(i < 24) {
-                System.out.printf("%3d%n", i);
-                } else {
-                    System.out.printf("%3d%n", 0);
-                }
+        int count = 0;
+        for(int i = 1; i <= 24; i += 2) {
+            if(count == 5) {
+                System.out.println();
             }
-            count++;
+            System.out.printf("%2d ", i);
+            if(count < 5) {
+                count++;
+            } else {
+                count = 1;
+            }
+        }
+
+        for(int i = 1; i <= 5 - count; i++) {
+            System.out.printf("%2d ", 0);
         }
 
 
@@ -90,9 +89,9 @@ public class CyclesTheme {
             srcNumber /= 10;
         }
         if(sumOnes % 2 == 0) {
-            System.out.println("Колличество едениц чётное число " + sumOnes);
+            System.out.println("Количество единиц чётное число " + sumOnes);
         } else {
-            System.out.println("Колличество едениц не чётное число " + sumOnes);
+            System.out.println("Количество единиц не чётное число " + sumOnes);
         }
 
         // 6. Отображение фигур в консоли.
@@ -138,9 +137,7 @@ public class CyclesTheme {
         System.out.println("\n7. Отображение ASCII-символов.");
         System.out.println("Dec Char");
         for(i = 0; i <= 127; i++) {
-            char simbol = (char) i;
-            System.out.printf("%3d", i);
-            System.out.println("  " + simbol);
+            System.out.printf("%3d %c%n", i, i);
         }
 
         // 8. Проверка, является ли число палиндромом.
@@ -160,27 +157,23 @@ public class CyclesTheme {
         }
 
         // 9. Определение, является ли число счастливым.
-        /* Не могу придумать как выделить и записать каждую цифру отдельно.
-        Смог просто проверить на "счастливость"*/
         System.out.println("\n9. Определение, является ли число счастливым.");
-        srcNumber = 456375;
-        int abc = srcNumber / 1000;
-        int sumAbc = 0;
-        while(abc != 0) {
-            digit = abc % 10;
-            sumAbc += digit;
-            abc /= 10;
-        }
-        int sumDef = 0;
+        srcNumber = 456377;
+        int halfSrcNumber = srcNumber / 1000;
+        int sumHalfSrcNumber = 0;
+        int sumHalfSrcNumber2 = 0;
         for(i = 0; i < 3; i++) {
             digit = srcNumber % 10;
-            sumDef += digit;
+            sumHalfSrcNumber2 += digit;
             srcNumber /= 10;
+            digit = halfSrcNumber % 10;
+            sumHalfSrcNumber +=  digit;
+            halfSrcNumber /= 10;
         }
-        if(sumAbc == sumDef) {
-            System.out.println("Сумма первых трёх чисел равно " + sumAbc + " Сумма последних " + sumDef + " Число счастливое.");
+        if(sumHalfSrcNumber == sumHalfSrcNumber2) {
+            System.out.println("Сумма первых трёх чисел равна " + sumHalfSrcNumber + ". Сумма последних " + sumHalfSrcNumber2 + " Число счастливое.");
         } else {
-            System.out.println("Сумма первых трёх чисел равно " + sumAbc + " Сумма последних " + sumDef + " Число не счастливое.");
+            System.out.println("Сумма первых трёх чисел равна " + sumHalfSrcNumber + ". Сумма последних " + sumHalfSrcNumber2 + " Число не счастливое.");
         }
 
         // 10. Вывод таблицы умножения Пифагора.
@@ -190,7 +183,7 @@ public class CyclesTheme {
                 if(j * i == 1) {
                     System.out.print("   ");
                 } else {
-                System.out.printf("%3d", (j * i));
+                     System.out.printf("%2d ", (j * i));
                 }
             }
             System.out.println();
