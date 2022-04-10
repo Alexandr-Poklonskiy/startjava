@@ -63,13 +63,10 @@ public class CyclesTheme {
         for(int i = 1; i <= 24; i += 2) {
             if(count == 5) {
                 System.out.println();
+                count = 0;
             }
             System.out.printf("%2d ", i);
-            if(count < 5) {
-                count++;
-            } else {
-                count = 1;
-            }
+            count++;
         }
 
         for(int i = 1; i <= 5 - count; i++) {
