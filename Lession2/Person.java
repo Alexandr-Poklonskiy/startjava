@@ -43,6 +43,4 @@ public class Person {
     void status () {
         System.out.println("Вес " + weight + "\nУровень тревоги " + anxietyLevel);
     }
-
-
 }
