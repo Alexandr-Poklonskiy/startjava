@@ -1,7 +1,7 @@
 public class Person {
 
-    String name = "Александр"
-    String sex = "Мужской"
+    String name = "Александр";
+    String sex = "Мужской";
     byte age = 38;
     byte weight = 68;
     short height = 181;
@@ -11,7 +11,7 @@ public class Person {
         System.out.println("Учу новую тему!");
         anxietyLevel+= 3;
     }
-    viod doHomeWork() {
+    void doHomeWork() {
         anxietyLevel += 5;
         System.out.println("Делаю домашнюю работу...");
     }
@@ -19,7 +19,7 @@ public class Person {
         anxietyLevel += 10;
         System.out.println("Жду результата проверки...");
     }
-    viod homeWorkDone() {
+    void homeWorkDone() {
         anxietyLevel -= 10;
         System.out.println("Всё сделал, можно двигаться дальше!");
     }
@@ -40,5 +40,9 @@ public class Person {
         System.out.println("Праздную день рождения!!!");
         age++;
     }
+    void status () {
+        System.out.println("Вес " + weight + "\nУровень тревоги " + anxietyLevel);
+    }
+
 
 }
