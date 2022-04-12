@@ -40,5 +40,7 @@ public class Person {
         System.out.println("Праздную день рождения!!!");
         age++;
     }
-
+    void status () {
+        System.out.println("Вес " + weight + "\nУровень тревоги " + anxietyLevel);
+    }
 }
