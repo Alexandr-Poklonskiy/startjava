@@ -1,6 +1,5 @@
 public class WolfTest {
     public static void main(String[] args) {
-
         Wolf alfa = new Wolf("Акелла");
 
         alfa.age = 10;

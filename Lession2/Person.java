@@ -9,38 +9,46 @@ public class Person {
 
     void learnNewThemeJava() {
         System.out.println("Учу новую тему!");
-        anxietyLevel+= 3;
+        anxietyLevel += 3;
     }
+
     void doHomeWork() {
         anxietyLevel += 5;
         System.out.println("Делаю домашнюю работу...");
     }
+
     void waitResult() {
         anxietyLevel += 10;
         System.out.println("Жду результата проверки...");
     }
+
     void homeWorkDone() {
         anxietyLevel -= 10;
         System.out.println("Всё сделал, можно двигаться дальше!");
     }
+
     void walkInPark() {
         System.out.println("Гуляю в парке!");
         anxietyLevel -= 3;
     }
+
     void playGuitar() {
         System.out.println("Играю на гитаре.");
         anxietyLevel -= 1;
     }
+
     void eatBeforeSleep() {
         System.out.println("Ем перед сном");
         anxietyLevel -= 2;
         weight++;
     }
+
     void celebrateBD() {
         System.out.println("Праздную день рождения!!!");
         age++;
     }
-    void status () {
+
+    void status() {
         System.out.println("Вес " + weight + "\nУровень тревоги " + anxietyLevel);
     }
 }
