@@ -5,7 +5,7 @@ public class Calculator {
     char sign;
 
     public int operation() {
-        switch (sign) {
+        switch(sign) {
             case '+' :
                 return x + y;
             case '-' :
