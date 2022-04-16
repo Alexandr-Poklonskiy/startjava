@@ -2,37 +2,25 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
-        boolean isWork = true;
-        while(isWork) {
+        String answer;
+        do {
             System.out.print("Введите первое число: ");
-            calc.x = scan.nextInt();
+            calc.setX(scan.nextInt());
+            System.out.print("Введите знак математической операции: ");
+            calc.setSign(scan.next().charAt(0));
+            System.out.print("Введите второе число: ");
+            calc.setY(scan.nextInt());
+            System.out.println("Ответ: " + calc.calculate());
+            scan.nextLine();
             do {
-                System.out.print("Введите знак математической операции: ");
-                calc.sign = scan.next().charAt(0);
-                if((calc.sign == '+') || (calc.sign == '-') || (calc.sign == '*') || (calc.sign == '/') || (calc.sign == '%') || (calc.sign == '^')) {
+                System.out.print("Хотите продолжить вычисления? [yes/no]: ");
+                answer = scan.nextLine();
+                if((answer.equals("no")) || (answer.equals("yes"))) {
                     break;
-                } else {
-                    System.out.println("Такой операции нет. Доступные операции: +, -, *, /, %, ^.");
                 }
             } while(true);
-            System.out.print("Введите второе число: ");
-            calc.y = scan.nextInt();
-            System.out.println("Ответ: " + calc.operation());
-
-            do { /*Не понимаю почему следующая строка у меня дважды выводится в консоль, 
-                  Вот так: Хотите продолжить вычисления? [yes/no]:Хотите продолжить
-                   вычисления? [yes/no]:*/
-                System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-                String answer = scan.nextLine();
-                if(answer.equals("no")) {
-                    isWork = false;
-                } else if(answer.equals("yes")) {
-                    break;
-                }
-            } while(isWork);
-        }
+        } while(answer.equals("yes"));
     }
 }
