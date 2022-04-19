@@ -1,23 +1,7 @@
 public class JaegerTest {
     public static void main(String[] args) {
-        Jaeger atlas = new Jaeger();
-        Jaeger gipsy = new Jaeger();
-        atlas.setModelName("Atlas Destroyer");
-        atlas.setMark("Mark-3");
-        atlas.setHeight(86.5f);
-        atlas.setWeight(2.8f);
-        atlas.setStrength(9);
-        atlas.setArmor(10);
-        atlas.setSpeed(5);
-        atlas.setEnergy(100);
-        gipsy.setModelName("Gipsy Danger");
-        gipsy.setMark("Mark-3");
-        gipsy.setHeight(79.25f);
-        gipsy.setWeight(1.98f);
-        gipsy.setStrength(8);
-        gipsy.setArmor(6);
-        gipsy.setSpeed(7);
-        gipsy.setEnergy(100);
+        Jaeger atlas = new Jaeger("Atlas Destroyer", "Mark-3", 86.5f, 2.8f, 9, 10, 5, 100);
+        Jaeger gipsy = new Jaeger("Gipsy Danger", "Mark-3", 79.25f, 1.98f, 8, 6, 7, 100);
 
         atlas.showName();
         atlas.move();
