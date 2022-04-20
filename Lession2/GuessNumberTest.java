@@ -8,6 +8,13 @@ public class GuessNumberTest {
         System.out.println("Второй игрок, введи своё имя");
         Player player2 = new Player(scan.nextLine());
         GuessNumber game = new GuessNumber(player1, player2);
-        game.startGame();
+        String answer;
+        do {
+            game.start();
+                do {
+                    System.out.print("Хотите продолжить игру? [yes/no]: ");
+                    answer = scan.nextLine();
+                } while(!(answer.equals("no")) & !(answer.equals("yes")));
+        } while(answer.equals("yes"));
     }
 }

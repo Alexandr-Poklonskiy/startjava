@@ -1,7 +1,4 @@
-import java.util.Scanner;
-
 public class Player {
-    Scanner scan = new Scanner(System.in);
     private String name;
     private int number;
 
@@ -17,7 +14,7 @@ public class Player {
         return number;
     }
 
-    void enterNumber() {
-        number = scan.nextInt();
+    public void setNumber(int number) {
+        this.number = number;
     }
 }
