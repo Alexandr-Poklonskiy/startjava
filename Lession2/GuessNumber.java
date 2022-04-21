@@ -5,7 +5,6 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int secretNumber;
-    private Random random = new Random();
     private Scanner scan = new Scanner(System.in);
 
     public GuessNumber(Player player1, Player player2) {
@@ -14,8 +13,9 @@ public class GuessNumber {
     }
 
     void start() {
-        secretNumber = random.nextInt(100);
-        System.out.println("Компьютер загадал число от 0 до 100. Отгадайте!");
+        Random random = new Random();
+        secretNumber = random.nextInt(100) + 1;
+        System.out.println("Компьютер загадал число от 1 до 100. Отгадайте!");
         while(true) {
             System.out.println(player1.getName() + " Твой ход!");
             player1.setNumber(scan.nextInt());
@@ -24,6 +24,7 @@ public class GuessNumber {
             } else if(player1.getNumber() < secretNumber) {
                  System.out.println("Данное число меньше того, что загадал компьютер");
             } else {
+                System.out.println(player1.getName() + " ты великолепен! Загаданное число " + secretNumber);
                 break;
             }
 
@@ -34,14 +35,9 @@ public class GuessNumber {
             } else if(player2.getNumber() < secretNumber) {
                 System.out.println("Данное число меньше того, что загадал компьютер");
             } else {
+                System.out.println(player2.getName() + " ты великолепен! Загаданное число " + secretNumber);
                 break;
             }
-        }
-
-        if(player1.getNumber() == secretNumber) {
-             System.out.println(player1.getName() + " ты великолепен! Загаданное число " + secretNumber);
-        } else {
-            System.out.println(player2.getName() + " ты великолепен! Загаданное число " + secretNumber);
         }
     }
 }
