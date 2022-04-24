@@ -1,3 +1,5 @@
+package com.startjava.lession1.game;
+
 public class GuessNumber {
     public static void main(String[] args) {
         System.out.println("Игра \"Угадай число\".");

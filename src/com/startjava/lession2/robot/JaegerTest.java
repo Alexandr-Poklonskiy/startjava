@@ -1,3 +1,5 @@
+package com.startjava.lession2.robot;
+
 public class JaegerTest {
     public static void main(String[] args) {
         Jaeger atlas = new Jaeger("Atlas Destroyer", "Mark-3", 86.5f, 2.8f, 9, 10, 5, 100);
