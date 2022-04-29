@@ -1,10 +1,10 @@
-package com.startjava.lession2.game;
+package com.startjava.lession2_3.game;
 
 import java.util.Scanner;
 
 public class GuessNumberTest {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in, "cp866");
+        Scanner scan = new Scanner(System.in);
         System.out.println("Первый игрок, введи своё имя");
         Player player1 = new Player(scan.nextLine());
         System.out.println("Второй игрок, введи своё имя");

@@ -1,4 +1,4 @@
-package com.startjava.lession2.robot;
+package com.startjava.lession2_3.robot;
 
 public class Jaeger {
     private String modelName;
@@ -120,7 +120,7 @@ public class Jaeger {
         System.out.println("Boost");
     }
 
-    void showStat() {
+    public void showStat() {
         System.out.println("Armor: " + armor + "\nEnergy: " + energy +
                 "\nSpeed: " + speed + "\nStrength: " + strength);
     }

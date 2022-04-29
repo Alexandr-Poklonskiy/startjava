@@ -1,9 +1,17 @@
-package com.startjava.lession2_3.calculator;
+package com.startjava.lession4.calculator;
 
 public class Calculator {
     private int x;
     private int y;
     private char sign;
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 
     public void setX(int x) {
         this.x = x;
@@ -20,21 +28,17 @@ public class Calculator {
     public int calculate() {
         switch (sign) {
             case '+' :
-                return x + y;
+                return Math.addExact(x, y);
             case '-' :
-                return x - y;
+                return Math.subtractExact(x, y);
             case '*' :
-                return x * y;
+                return Math.multiplyExact(x, y);
             case '/' :
-                return x / y;
+                return Math.floorDiv(x, y);
             case '%' :
-                return x % y;
+                return (int) Math.IEEEremainder(x, y);
             case '^' :
-                int result = 1;
-                for(int i = 0; i < y; i++) {
-                    result *= x;
-                }
-                return result;
+                return (int) Math.pow(x, y);
             default :
                 return 0;
         }
