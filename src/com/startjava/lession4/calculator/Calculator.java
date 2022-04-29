@@ -4,15 +4,7 @@ public class Calculator {
     private int x;
     private int y;
     private char sign;
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
+    
     public void setX(int x) {
         this.x = x;
     }
