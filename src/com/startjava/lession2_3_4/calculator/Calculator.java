@@ -1,10 +1,10 @@
-package com.startjava.lession4.calculator;
+package com.startjava.lession2_3_4.calculator;
 
 public class Calculator {
     private int x;
     private int y;
     private char sign;
-    
+
     public void setX(int x) {
         this.x = x;
     }
