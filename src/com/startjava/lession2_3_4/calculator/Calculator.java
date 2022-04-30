@@ -20,7 +20,7 @@ public class Calculator {
             case '/' :
                 return Math.floorDiv(x, y);
             case '%' :
-                return (int) Math.IEEEremainder(x, y);
+                return x % y;
             case '^' :
                 return (int) Math.pow(x, y);
             default :
