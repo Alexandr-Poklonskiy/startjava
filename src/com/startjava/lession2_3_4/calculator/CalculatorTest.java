@@ -9,11 +9,7 @@ public class CalculatorTest {
         String answer;
         do {
             System.out.print("Введите математическое выражение: ");
-            String[] simbols = scan.nextLine().split(" ");
-            calc.setX(Integer.parseInt(simbols[0]));
-            calc.setY(Integer.parseInt(simbols[2]));
-            calc.setSign(simbols[1].charAt(0));
-            System.out.println("Ответ: " + calc.calculate());
+            System.out.println("Ответ: " + calc.calculate(scan.nextLine()));
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 answer = scan.nextLine();
