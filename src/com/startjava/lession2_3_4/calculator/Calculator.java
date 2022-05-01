@@ -1,15 +1,12 @@
 package com.startjava.lession2_3_4.calculator;
 
 public class Calculator {
-    private int x;
-    private int y;
-    private char sign;
 
-    public int calculate(String mathExppression) {
-        String[] simbols = mathExppression.split(" ");
-        x = Integer.parseInt(simbols[0]);
-        y = Integer.parseInt(simbols[2]);
-        sign = simbols[1].charAt(0);
+    public int calculate(String mathExpression) {
+        String[] simbolsMathExp = mathExpression.split(" ");
+        int x = Integer.parseInt(simbolsMathExp[0]);
+        int y = Integer.parseInt(simbolsMathExp[2]);
+        char sign = simbolsMathExp[1].charAt(0);
         switch (sign) {
             case '+' :
                 return Math.addExact(x, y);

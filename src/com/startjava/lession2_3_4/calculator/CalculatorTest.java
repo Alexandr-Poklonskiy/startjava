@@ -13,7 +13,7 @@ public class CalculatorTest {
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 answer = scan.nextLine();
-            } while(!(answer.equals("no")) & !(answer.equals("yes")));
+            } while(!(answer.equals("no")) && !(answer.equals("yes")));
         } while(answer.equals("yes"));
     }
 }
