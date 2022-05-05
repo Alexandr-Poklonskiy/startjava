@@ -1,5 +1,6 @@
 package com.startjava.lession2_3_4.game;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -17,43 +18,47 @@ public class GuessNumber {
 
     void start() {
         Random random = new Random();
-        secretNumber = random.nextInt(100) + 1;
+        secretNumber = random.nextInt(100 + 1);
         System.out.println("Компьютер загадал число от 1 до 100. Отгадайте! У вас по 10 попыток.");
-        for(index = 0; index < 10;  index++) {
-            System.out.println(player1.getName() + " Твой ход!");
-            player1.setNumbers(scan.nextInt(), index);
-            if(player1.getNumber(index) > secretNumber) {
-                System.out.println("Данное число больше того, что загадал компьютер");
-            } else if(player1.getNumber(index) < secretNumber) {
-                 System.out.println("Данное число меньше того, что загадал компьютер");
-            } else {
-                player1.win(secretNumber, index);
-                /* Из-за того что, если выигрывает первый игрок, у второго игрока количество введённых чисел меньше на 1,
-                    метод, который записывает результаты ввода для второго игрока, я разместил в двух местах,
-                    в зависимости от того кто выиграл*/
-                player2.inNumbers(index - 1);
+        for(index = 0; index < 10; index++) {
+            if(isGuess(player1)) {
+                break;
             }
-            if(index == 9) {
-                System.out.println("У игрока " + player1.getName() + " закончились попытки.");
-            }
-
-
-            System.out.println(player2.getName() + " Твой ход!");
-            player2.setNumbers(scan.nextInt(), index);
-            if(player2.getNumber(index) > secretNumber) {
-                System.out.println("Данное число больше того, что загадал компьютер");
-            } else if(player2.getNumber(index) < secretNumber) {
-                System.out.println("Данное число меньше того, что загадал компьютер");
-            } else {
-                player2.win(secretNumber, index);
-                player2.inNumbers(index);
+            if(isGuess(player2)) {
                 break;
             }
         }
-        player1.inNumbers(index);
-        player1.showResult();
-        player2.showResult();
-        player1.resetNumbers(index);
-        player2.resetNumbers(index);
+
+        showResult(player1);
+        showResult(player2);
+    }
+
+    private boolean isGuess(Player player) {
+        System.out.println(player.getName() + " Твой ход!");
+        player.setNumber(scan.nextInt(), index);
+        if(player.getNumber(index) > secretNumber) {
+            System.out.println("Данное число больше того, что загадал компьютер");
+        } else if(player.getNumber(index) < secretNumber) {
+            System.out.println("Данное число меньше того, что загадал компьютер");
+        } else {
+            System.out.println(player.getName() + " угадал число " + secretNumber + " с " + (index + 1) + " попытки!");
+            return true;
+        }
+        if(index == 9) {
+            System.out.println("У игрока " + player.getName() + " закончились попытки.");
+        }
+        return false;
+    }
+
+    private void showResult(Player player) {
+        index = 0;
+        for(int number : player.getNumbers()) {
+            if(!(number == 0)) {
+                index++;
+            }
+        }
+        int[] enteredNum = Arrays.copyOf(player.getNumbers(), index);
+        System.out.println("Игрок " + player.getName() + " ввёл числа " + Arrays.toString(enteredNum));
+        player.resetNumbers(index);
     }
 }
