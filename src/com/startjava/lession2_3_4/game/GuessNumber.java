@@ -18,7 +18,7 @@ public class GuessNumber {
 
     void start() {
         Random random = new Random();
-        secretNumber = random.nextInt(100 + 1);
+        secretNumber = random.nextInt(100) + 1;
         System.out.println("Компьютер загадал число от 1 до 100. Отгадайте! У вас по 10 попыток.");
         for(index = 0; index < 10; index++) {
             if(isGuess(player1)) {
@@ -29,8 +29,8 @@ public class GuessNumber {
             }
         }
 
-        showResult(player1);
-        showResult(player2);
+        showAllNumbers(player1);
+        showAllNumbers(player2);
     }
 
     private boolean isGuess(Player player) {
@@ -41,7 +41,7 @@ public class GuessNumber {
         } else if(player.getNumber(index) < secretNumber) {
             System.out.println("Данное число меньше того, что загадал компьютер");
         } else {
-            System.out.println(player.getName() + " угадал число " + secretNumber + " с " + (index + 1) + " попытки!");
+            System.out.print(player.getName() + " угадал число " + secretNumber + " с " + (index + 1) + " попытки!");
             return true;
         }
         if(index == 9) {
@@ -50,15 +50,13 @@ public class GuessNumber {
         return false;
     }
 
-    private void showResult(Player player) {
-        index = 0;
-        for(int number : player.getNumbers()) {
-            if(!(number == 0)) {
-                index++;
+    private void showAllNumbers(Player player) {
+        System.out.print("\nИгрок " + player.getName() + " ввёл числа: ");
+        for(int number : player.getNumbers(index)) {
+            if(number != 0) {
+                System.out.print(number + " ");
             }
         }
-        int[] enteredNum = Arrays.copyOf(player.getNumbers(), index);
-        System.out.println("Игрок " + player.getName() + " ввёл числа " + Arrays.toString(enteredNum));
         player.resetNumbers(index);
     }
 }

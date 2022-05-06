@@ -14,8 +14,9 @@ public class Player {
         return name;
     }
 
-    public int[] getNumbers() {
-        return numbers;
+    public int[] getNumbers(int index) {
+        int[] copyNumbers = Arrays.copyOf(numbers, index + 1);
+        return copyNumbers;
     }
 
     public int getNumber(int i) {
@@ -27,10 +28,10 @@ public class Player {
     }
 
     public void resetNumbers(int index) {
-        if(index < 10) {
+//        if(index < 10) {
             Arrays.fill(numbers, 0, index + 1, 0);
-        } else {
-            Arrays.fill(numbers,0);
-        }
+//        } else {
+//            Arrays.fill(numbers,0);
+//        }
     }
 }
