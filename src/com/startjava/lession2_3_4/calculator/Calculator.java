@@ -3,10 +3,10 @@ package com.startjava.lession2_3_4.calculator;
 public class Calculator {
 
     public int calculate(String mathExpression) {
-        String[] simbolsMathExp = mathExpression.split(" ");
-        int x = Integer.parseInt(simbolsMathExp[0]);
-        int y = Integer.parseInt(simbolsMathExp[2]);
-        char sign = simbolsMathExp[1].charAt(0);
+        String[] partsExpression = mathExpression.split(" ");
+        int x = Integer.parseInt(partsExpression[0]);
+        int y = Integer.parseInt(partsExpression[2]);
+        char sign = partsExpression[1].charAt(0);
         switch (sign) {
             case '+' :
                 return Math.addExact(x, y);
