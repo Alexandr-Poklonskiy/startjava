@@ -28,10 +28,10 @@ public class Player {
     }
 
     public void resetNumbers(int index) {
-//        if(index < 10) {
+        if(index < 10) {
             Arrays.fill(numbers, 0, index + 1, 0);
-//        } else {
-//            Arrays.fill(numbers,0);
-//        }
+        } else {
+            Arrays.fill(numbers,0);
+        }
     }
 }
