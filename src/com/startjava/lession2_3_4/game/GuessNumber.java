@@ -31,9 +31,12 @@ public class GuessNumber {
 
         showAllNumbers(player1);
         showAllNumbers(player2);
+        player1.resetNumbers();
+        player2.resetNumbers();
     }
 
     private boolean isGuess(Player player) {
+        player.setTurn(1);
         System.out.println(player.getName() + " Твой ход!");
         player.setNumber(scan.nextInt(), index);
         if(player.getNumber(index) > secretNumber) {
@@ -41,7 +44,7 @@ public class GuessNumber {
         } else if(player.getNumber(index) < secretNumber) {
             System.out.println("Данное число меньше того, что загадал компьютер");
         } else {
-            System.out.print(player.getName() + " угадал число " + secretNumber + " с " + (index + 1) + " попытки!");
+            System.out.println(player.getName() + " угадал число " + secretNumber + " с " + player.getTurn() + " попытки!");
             return true;
         }
         if(index == 9) {
@@ -51,12 +54,10 @@ public class GuessNumber {
     }
 
     private void showAllNumbers(Player player) {
-        System.out.print("\nИгрок " + player.getName() + " ввёл числа: ");
-        for(int number : player.getNumbers(index)) {
-            if(number != 0) {
+        System.out.print("Игрок " + player.getName() + " ввёл числа: ");
+        for(int number : player.getNumbers()) {
                 System.out.print(number + " ");
-            }
         }
-        player.resetNumbers(index);
+        System.out.println();
     }
 }

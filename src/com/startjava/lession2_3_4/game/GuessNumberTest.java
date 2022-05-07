@@ -14,7 +14,7 @@ public class GuessNumberTest {
         do {
             game.start();
             do {
-                System.out.print("\nХотите продолжить игру? [yes/no]: ");
+                System.out.print("Хотите продолжить игру? [yes/no]: ");
                 answer = scan.nextLine();
             } while(!answer.equals("no") && !answer.equals("yes"));
         } while(answer.equals("yes"));

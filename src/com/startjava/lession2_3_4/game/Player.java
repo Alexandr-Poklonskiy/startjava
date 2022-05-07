@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int[] numbers = new int[10];
+    private int turn = 0;
 
     public Player(String name) {
         this.name = name;
@@ -14,9 +15,8 @@ public class Player {
         return name;
     }
 
-    public int[] getNumbers(int index) {
-        int[] copyNumbers = Arrays.copyOf(numbers, index + 1);
-        return copyNumbers;
+    public int[] getNumbers() {
+        return Arrays.copyOf(numbers, turn);
     }
 
     public int getNumber(int i) {
@@ -27,11 +27,16 @@ public class Player {
         numbers[i] = number;
     }
 
-    public void resetNumbers(int index) {
-        if(index < 10) {
-            Arrays.fill(numbers, 0, index + 1, 0);
-        } else {
-            Arrays.fill(numbers,0);
-        }
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn += turn;
+    }
+
+    public void resetNumbers() {
+            Arrays.fill(numbers, 0, turn, 0);
+            turn = 0;
     }
 }
