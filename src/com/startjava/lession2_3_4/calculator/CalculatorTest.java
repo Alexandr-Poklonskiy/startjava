@@ -7,11 +7,16 @@ public class CalculatorTest {
         Scanner scan = new Scanner(System.in);
         String answer;
         do {
-            System.out.println("Ответ: " + Calculator.calculate());
+            System.out.print("Введите математическое выражение: ");
+            try {
+                System.out.println("Ответ: " + Calculator.calculate(scan.nextLine()));
+            } catch(IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 answer = scan.nextLine();
-            } while(!(answer.equals("no")) && !(answer.equals("yes")));
+            } while(!answer.equals("no") && !answer.equals("yes"));
         } while(answer.equals("yes"));
     }
 }
