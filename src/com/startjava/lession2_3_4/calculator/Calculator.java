@@ -7,8 +7,7 @@ public class Calculator {
         int x = Integer.parseInt(partsExpression[0]);
         int y = Integer.parseInt(partsExpression[2]);
         if(x < 0 || y < 0) {
-            throw new IllegalArgumentException("Вы ввели отрицательное число." +
-                    " Принимаются только целые положительные числа.");
+            throw new IllegalArgumentException("Вы ввели отрицательное число." + " Принимаются только целые положительные числа.");
         }
         char sign = partsExpression[1].charAt(0);
         return switch(sign) {
