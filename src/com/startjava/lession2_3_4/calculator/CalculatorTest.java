@@ -10,8 +10,8 @@ public class CalculatorTest {
             System.out.print("Введите математическое выражение: ");
             try {
                 System.out.println("Ответ: " + Calculator.calculate(scan.nextLine()));
-            } catch(IllegalArgumentException e) {
-                System.out.println(e.getMessage());
+            } catch(IllegalArgumentException ex) {
+                System.out.println(ex.getMessage());
             }
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
