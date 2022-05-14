@@ -2,7 +2,7 @@ package com.startjava.lession2_3_4.calculator;
 
 public class Calculator {
 
-    public static int calculate(String mathExpression) throws IllegalArgumentException {
+    public static int calculate(String mathExpression) {
         String[] partsExpression = mathExpression.split(" ");
         int x = Integer.parseInt(partsExpression[0]);
         int y = Integer.parseInt(partsExpression[2]);
