@@ -34,7 +34,7 @@ public class GuessNumber {
     }
 
     private boolean isGuess(Player player) {
-        player.setCount();
+        player.setCountMove();
         System.out.println(player.getName() + " Твой ход!");
         player.setNumber(scan.nextInt());
         if(player.getNumber() == secretNumber) {

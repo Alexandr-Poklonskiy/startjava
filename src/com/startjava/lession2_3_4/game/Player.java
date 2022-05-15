@@ -34,7 +34,7 @@ public class Player {
         return countMove;
     }
 
-    public void setCount() {
+    public void setCountMove() {
         countMove++;
     }
 
