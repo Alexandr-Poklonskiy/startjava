@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int[] numbers = new int[10];
-    private int count = 0;
+    private int countMove = 0;
+    private int countWin = 0;
 
     public Player(String name) {
         this.name = name;
@@ -16,27 +17,37 @@ public class Player {
     }
 
     public int[] getNumbers() {
-        return Arrays.copyOf(numbers, count);
+        return Arrays.copyOf(numbers, countMove);
     }
 
     public int getNumber() {
-        return numbers[count - 1];
+        return numbers[countMove - 1];
     }
 
     public void setNumber(int number) {
-        numbers[count - 1] = number;
+        if(number > 0 && number <= 100) {
+            numbers[countMove - 1] = number;
+        }
     }
 
-    public int getCount() {
-        return count;
+    public int getCountMove() {
+        return countMove;
     }
 
     public void setCount() {
-        count++;
+        countMove++;
+    }
+
+    public int getCountWin() {
+        return countWin;
+    }
+
+    public void setCountWin() {
+        countWin++;
     }
 
     public void resetNumbers() {
-        Arrays.fill(numbers, 0, count, 0);
-        count = 0;
+        Arrays.fill(numbers, 0, countMove, 0);
+        countMove = 0;
     }
 }

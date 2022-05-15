@@ -5,11 +5,12 @@ import java.util.Scanner;
 public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Первый игрок, введи своё имя");
-        Player player1 = new Player(scan.nextLine());
-        System.out.println("Второй игрок, введи своё имя");
-        Player player2 = new Player(scan.nextLine());
-        GuessNumber game = new GuessNumber(player1, player2);
+        Player[] players = new Player[3];
+        for(int i = 0; i < players.length; i++) {
+            System.out.println((i + 1) + " игрок, введи своё имя");
+            players[i] = new Player(scan.nextLine());
+        }
+        GuessNumber game = new GuessNumber(players);
         String answer;
         do {
             game.start();
