@@ -14,9 +14,9 @@ public class GuessNumber {
     }
 
     void start() {
-        for(int round = 1; round <=3; round++) {
+        for(int round = 1; round <= 3; round++) {
             System.out.println("Раунд " + round + "!");
-            int[] lot = lot();
+            int[] lot = castLots();
             secretNumber = random.nextInt(100) + 1;
             System.out.println("Компьютер загадал число от 1 до 100. Отгадайте! У вас по 10 попыток.");
             for(int i = 0; i < 10; i++) {
@@ -33,12 +33,27 @@ public class GuessNumber {
 
     }
 
+    /* Я реализовал рулетку таким образом, с помощью тасования Фишера-Йетса
+    При каждом новом раунде генерируется массив со случайным порядком чисел от 0 до 2,
+    и они принимаются массивом players в качестве индекса.*/
+    private int[] castLots() {
+        int[] lot = {0, 1, 2};
+        for(int i = lot.length - 1; i > 0; i--) {
+            int index = random.nextInt(i + 1);
+            int swap = lot[index];
+            lot[index] = lot[i];
+            lot[i] = swap;
+        }
+        return lot;
+    }
+
     private boolean isGuess(Player player) {
         player.setCountMove();
         System.out.println(player.getName() + " Твой ход!");
         player.setNumber(scan.nextInt());
         if(player.getNumber() == secretNumber) {
-            System.out.println(player.getName() + " угадал число " + secretNumber + " с " + player.getCountMove() + " попытки!");
+            System.out.println(player.getName() + " угадал число " + secretNumber + " с "
+                    + player.getCountMove() + " попытки!");
             player.setCountWin();
             return true;
         }
@@ -49,28 +64,6 @@ public class GuessNumber {
         }
         return false;
     }
-
-    private void showAllNumbers(Player player) {
-        System.out.print("Игрок " + player.getName() + " ввёл числа: ");
-        for(int number : player.getNumbers()) {
-            System.out.print(number + " ");
-        }
-        System.out.println();
-    }
-    /* Я реализовал рулетку таким образом, с помощью тасования Фишера-Йетса
-    При каждом новом раунде генерируется массив со случайным порядком чисел от 0 до 2,
-    и они принимаются массивом plaers в качестве индекса.*/
-    private int[] lot() {
-        int[] lot = {0, 1, 2,};
-        for(int i = lot.length - 1; i > 0; i--) {
-            int index = random.nextInt(i + 1);
-            int swap = lot[index];
-            lot[index] = lot[i];
-            lot[i] = swap;
-        }
-        return lot;
-    }
-
     private void showWinner() {
         if(players[0].getCountWin() == players[1].getCountWin() && players[0].getCountWin() == players[2].getCountWin()) {
             System.out.println("Ничья!");
@@ -85,5 +78,13 @@ public class GuessNumber {
             winner = players[2].getName();
         }
         System.out.printf("Победил игрок %s!\n", winner);
+    }
+
+    private void showAllNumbers(Player player) {
+        System.out.print("Игрок " + player.getName() + " ввёл числа: ");
+        for(int number : player.getNumbers()) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
     }
 }
