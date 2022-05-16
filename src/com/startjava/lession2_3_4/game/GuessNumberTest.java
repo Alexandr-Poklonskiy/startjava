@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        GuessNumber game = new GuessNumber(creationPlayers());
+        GuessNumber game = new GuessNumber(createPlayers());
         String answer;
         do {
             game.start();
@@ -16,7 +16,7 @@ public class GuessNumberTest {
         } while(answer.equals("yes"));
     }
 
-    private static Player[] creationPlayers() {
+    private static Player[] createPlayers() {
         Scanner scan = new Scanner(System.in);
         Player[] players = new Player[3];
         for(int i = 0; i < players.length; i++) {

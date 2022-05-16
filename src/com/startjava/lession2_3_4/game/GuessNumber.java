@@ -24,7 +24,7 @@ public class GuessNumber {
                 if(isGuess(players[lot[1]])) break;
                 if(isGuess(players[lot[2]])) break;
             }
-             for(Player player : players) {
+            for(Player player : players) {
                 showAllNumbers(player);
                 player.resetNumbers();
             }
@@ -52,8 +52,7 @@ public class GuessNumber {
         System.out.println(player.getName() + " Твой ход!");
         player.setNumber(scan.nextInt());
         if(player.getNumber() == secretNumber) {
-            System.out.println(player.getName() + " угадал число " + secretNumber + " с "
-                    + player.getCountMove() + " попытки!");
+            System.out.println(player.getName() + " угадал число " + secretNumber + " с " + player.getCountMove() + " попытки!");
             player.setCountWin();
             return true;
         }
@@ -64,17 +63,22 @@ public class GuessNumber {
         }
         return false;
     }
+
     private void showWinner() {
-        if(players[0].getCountWin() == players[1].getCountWin() && players[0].getCountWin() == players[2].getCountWin()) {
+        int[] plWin = new int[3];
+        for(int i = 0; i < plWin.length; i++) {
+            plWin[i] = players[i].getCountWin();
+        }
+        if(plWin[0] == plWin[1] && plWin[0] == plWin[2]) {
             System.out.println("Ничья!");
             return;
         }
         String winner = players[0].getName();
-        if(players[1].getCountWin() > players[2].getCountWin()) {
-            if(players[1].getCountWin() > players[0].getCountWin()) {
+        if(plWin[1] > plWin[2]) {
+            if(plWin[1] > plWin[0]) {
                 winner = players[1].getName();
             }
-        } else if(players[2].getCountWin() > players[0].getCountWin()) {
+        } else if(plWin[2] > plWin[0]) {
             winner = players[2].getName();
         }
         System.out.printf("Победил игрок %s!\n", winner);
