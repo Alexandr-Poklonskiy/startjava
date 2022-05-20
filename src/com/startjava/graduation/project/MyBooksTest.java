@@ -10,7 +10,8 @@ public class MyBooksTest {
         myBooks.showShelf();
         boolean isExit = false;
         do {
-            System.out.println("\n1. Добавить.\n2. Удалить\n3. Переместить\n4. Найти\n5. " + "Количество книг и свободного места\n6. Выход.");
+            System.out.println("\n1. Добавить.\n2. Удалить\n3. Переместить\n4. Найти\n" +
+                    "5. Количество книг и свободного места\n6. Выход.");
             System.out.print("Введите номер команды: ");
             Scanner scan = new Scanner(System.in);
             int command = 0;
