@@ -7,9 +7,9 @@ public class MyBooksTest {
         Bookshelf myBooks = new Bookshelf();
         System.out.println("Моя книжная полка");
         myBooks.showShelf();
-        String answer;
+        boolean isExit = false;
         do {
-            System.out.println("1. Добавить.\n2. Удалить\n3. Переместить\n4. Найти\n5. " + "Количество книг и свободного места");
+            System.out.println("\n1. Добавить.\n2. Удалить\n3. Переместить\n4. Найти\n5. " + "Количество книг и свободного места\n6. Выход.");
             System.out.print("Введите номер команды: ");
             Scanner scan = new Scanner(System.in);
             int command = scan.nextInt();
@@ -49,15 +49,15 @@ public class MyBooksTest {
                 case 5:
                     myBooks.showNumOfBooks();
                     break;
+                case 6:
+                    isExit = true;
+                    break;
                 default:
                     System.out.println("Такой команды нет.");
-
             }
-            myBooks.showShelf();
-            do {
-                System.out.print("Хотите продолжить? [yes/no]: ");
-                answer = scan.nextLine();
-            } while(!answer.equals("no") && !answer.equals("yes"));
-        } while(answer.equals("yes"));
+            if(!isExit) {
+                myBooks.showShelf();
+            }
+        } while(!isExit);
     }
 }

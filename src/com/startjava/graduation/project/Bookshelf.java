@@ -18,6 +18,7 @@ public class Bookshelf {
     }
 
     public void showShelf() {
+        System.out.println();
         for(Book book : shelf) {
             if(book != null) {
                 System.out.print("[K]");
@@ -33,7 +34,7 @@ public class Bookshelf {
     }
 
     public void deleteBook(int position) {
-        if(position < 1 || position > numBooks) {
+        if(position > numBooks) {
             System.out.println("Такой книги нет.");
             return;
         }
