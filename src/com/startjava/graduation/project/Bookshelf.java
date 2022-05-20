@@ -42,14 +42,14 @@ public class Bookshelf {
         numBooks--;
     }
 
-    public void move(int x, int y) {
-        Book temp = shelf[x - 1];
-        if(x > y) {
-            System.arraycopy(shelf, y - 1, shelf, y, x - y);
+    public void move(int bookPosition, int destination) {
+        Book temp = shelf[bookPosition - 1];
+        if(bookPosition > destination) {
+            System.arraycopy(shelf, destination - 1, shelf, destination, bookPosition - destination);
         } else {
-            System.arraycopy(shelf, x, shelf, x - 1, y - x);
+            System.arraycopy(shelf, bookPosition, shelf, bookPosition - 1, destination - bookPosition);
         }
-        shelf[y - 1] = temp;
+        shelf[destination - 1] = temp;
     }
 
     public String find(String title) {
