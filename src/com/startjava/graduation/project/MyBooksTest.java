@@ -1,5 +1,6 @@
 package com.startjava.graduation.project;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MyBooksTest {
@@ -12,7 +13,10 @@ public class MyBooksTest {
             System.out.println("\n1. Добавить.\n2. Удалить\n3. Переместить\n4. Найти\n5. " + "Количество книг и свободного места\n6. Выход.");
             System.out.print("Введите номер команды: ");
             Scanner scan = new Scanner(System.in);
-            int command = scan.nextInt();
+            int command = 0;
+            try {
+                command = scan.nextInt();
+            } catch(InputMismatchException e) {}
             scan.nextLine();
             switch(command) {
                 case 1:
