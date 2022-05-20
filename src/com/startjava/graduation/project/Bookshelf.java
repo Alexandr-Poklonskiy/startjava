@@ -33,6 +33,10 @@ public class Bookshelf {
     }
 
     public void deleteBook(int position) {
+        if(position < numBooks || position > numBooks) {
+            System.out.println("Такой книги нет.");
+            return;
+        }
         if(position == shelf.length) {
             shelf[position - 1] = null;
         } else {
