@@ -15,7 +15,8 @@ public class Book {
         return title;
     }
 
-    public void showBook() {
-        System.out.println(title + ", " + author + ", " + publishYear + ".");
+    @Override
+    public String toString() {
+        return title + ", " + author + ", " + publishYear + ", ";
     }
 }

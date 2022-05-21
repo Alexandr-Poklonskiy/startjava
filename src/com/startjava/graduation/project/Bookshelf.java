@@ -29,19 +29,19 @@ public class Bookshelf {
         System.out.println();
         for(int i = 0; i < numBooks; i++) {
             System.out.print(i + 1 + ". ");
-            shelf[i].showBook();
+            System.out.println(shelf[i]);
         }
     }
 
     public void deleteBook(int position) {
         if(position > numBooks) {
-            System.out.println("Такой книги нет.");
+            System.out.println("Это место свободно.");
             return;
         }
-        if(position != shelf.length) {
-            System.arraycopy(shelf, position, shelf, position - 1, shelf.length - position);
+        if(position < numBooks) {
+            System.arraycopy(shelf, position, shelf, position - 1, numBooks - position);
         }
-        shelf[shelf.length - 1] = null;
+        shelf[numBooks - 1] = null;
         numBooks--;
     }
 
@@ -64,9 +64,5 @@ public class Bookshelf {
             }
         }
         return result;
-    }
-
-    public void showNumOfBooks() {
-        System.out.println("Количество книг на полке " + numBooks + ". Свободных мест " + (shelf.length - numBooks) + ".");
     }
 }

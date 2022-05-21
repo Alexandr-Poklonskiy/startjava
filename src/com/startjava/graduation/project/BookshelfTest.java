@@ -3,7 +3,7 @@ package com.startjava.graduation.project;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MyBooksTest {
+public class BookshelfTest {
     public static void main(String[] args) {
         Bookshelf myBooks = new Bookshelf();
         System.out.println("Моя книжная полка");
@@ -17,9 +17,13 @@ public class MyBooksTest {
             int command = 0;
             try {
                 command = scan.nextInt();
-            } catch(InputMismatchException e) {}
+            } catch(InputMismatchException e) {
+                System.out.println("Для ввода используйте числа от 1 до 6.");
+            }
             scan.nextLine();
             switch(command) {
+                case 0:
+                    break;
                 case 1:
                     if(myBooks.getNumBooks() == myBooks.getShelfLength()) {
                         System.out.println("Нет свободного места.");
@@ -37,14 +41,12 @@ public class MyBooksTest {
                 case 2:
                     System.out.print("Введите номер книги: ");
                     myBooks.deleteBook(scan.nextInt());
-                    scan.nextLine();
                     break;
                 case 3:
                     System.out.print("Введите номер книги: ");
                     int bookPosition = scan.nextInt();
                     System.out.print("Номер позиции куда переместить: ");
                     int destination = scan.nextInt();
-                    scan.nextLine();
                     myBooks.move(bookPosition, destination);
                     break;
                 case 4:
@@ -52,7 +54,9 @@ public class MyBooksTest {
                     System.out.println(myBooks.find(scan.nextLine()));
                     break;
                 case 5:
-                    myBooks.showNumOfBooks();
+                    // Отказался от метода showNumOfBooks(), т.к. у меня уже есть методы для получения этой информации.
+                    System.out.println("Количество книг на полке " + myBooks.getNumBooks() +
+                            ". Свободных мест " + (myBooks.getShelfLength() - myBooks.getNumBooks()) + ".");
                     break;
                 case 6:
                     isExit = true;
